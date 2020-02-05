@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Console on engineering note</title>
+    <link>https://blog.ordinarius-fectum.net/tags/console/</link>
+    <description>Recent content in Console on engineering note</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>&amp;copy; &lt;a href=&#34;https://github.com/ribice&#34;&gt;Emir Ribic&lt;/a&gt; 2017</copyright>
+    <lastBuildDate>Tue, 11 Oct 2016 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://blog.ordinarius-fectum.net/tags/console/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Macでシリアル接続</title>
+      <link>https://blog.ordinarius-fectum.net/posts/memo/screen/</link>
+      <pubDate>Tue, 11 Oct 2016 00:00:00 +0900</pubDate>
+      
+      <guid>https://blog.ordinarius-fectum.net/posts/memo/screen/</guid>
+      <description>Mac OS Xからコンソール接続するときの方法をすぐ忘れるのでメモ。</description>
+    </item>
+    
+  </channel>
+</rss>
