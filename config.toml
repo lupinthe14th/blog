@@ -1,0 +1,63 @@
+baseurl = "https://blog.ordinarius-fectum.net"
+languageCode = "ja"
+title = "engineering note"
+theme = "kiss"
+copyright = "&copy; <a href=\"https://github.com/ribice\">Emir Ribic</a> 2017"
+disqusShortname = "engineeringnote"
+googleAnalytics = ""
+Paginate = 5 # Number of posts per page
+enableRobotsTXT = true
+
+[params.rss] # Adding this tag enables RSS feed
+includeContent = true # Includes whole content in rss
+authorName = "Hideo Suzuki" # Author full name
+authorEmail = "hideosuzuki@ordinarius-fectum.net" # Author email
+
+[params.assets]
+customCSS = ["css/custom.css"]
+
+[params.info]
+adsense = "" # Adsense ID (ID only, without ca-pub-)
+enableSocial = true # Adds OpenGraph and Twitter cards
+homeTitle = "engineering note" # Title for home page
+poweredby = true # Adds powered by hugo and kiss below Copyright
+related = true # Includes related articles at the bottom of the article
+codeCopy = true # Add copy button above code blocks
+
+[params.features]
+disqusOnDemand = true  # Load Disqus comments on click
+
+
+[params.opengraph.facebook]
+admins = [] # array of Facebook IDs
+appID = "925856150831958"
+pageID = ""
+
+[params.opengraph.twitter]
+page = "hideosuzuki2" # Twitter Page username. If not set, params.social.twitter will be used.
+
+[params.social]
+twitter = "hideosuzuki2"
+github = "lupinthe14th"
+email = "hideosuzuki@ordinarius-fectum.net"
+linkedin = "hideo-suzuki-7a961a177"
+facebook = "hideo.suzukithe13th"
+instagram = "lupinthe14th"
+codepen = ""
+rss = "index.xml" # Add this to show RSS button in social.
+
+[params.social.config]
+platforms = ["github","facebook","twitter","instagram","email","codepen","linkedin"]
+
+[params.matomoAnalytics]
+siteID = 1
+rootURL = "//blog.ordinarius-fectum.net/"
+
+[params.fathomAnalytics]
+rootURL = "//blog.ordinarius-fectum.net/"
+
+[taxonomies]
+tag ="tags"
+
+[blackfriday]
+hrefTargetBlank = true
