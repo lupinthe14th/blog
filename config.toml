@@ -25,8 +25,8 @@ disqusShortname = "engineeringnote"
     #youtube = "user/username" # or channel/channelname
 
 [params]
-    tagline = "A Hugo theme for creative and technical writing"
-    description = "Kiera: A Hugo theme for creative and technical writing."
+    #tagline = "A Hugo theme for creative and technical writing"
+    #description = "Kiera: A Hugo theme for creative and technical writing."
     #images = [""] #This is used for opengraph/twitter cards.
     customCSS = []  #Optional Customised CSS
     #favicon = ""
