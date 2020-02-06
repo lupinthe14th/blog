@@ -2,7 +2,7 @@
 title: Arch Linux ARM on Nanopc t4
 date: 2019-12-14T20:55:00+09:00
 lastmod: 2019-12-14T22:00:00+09:00
-categorys:
+categories:
 - Kubernetes
 tags:
 - Kubernetes
