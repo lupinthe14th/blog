@@ -1,8 +1,13 @@
 ---
 title: Macでシリアル接続
 date: 2016-10-11T00:00:00+09:00
+categories: ["memo"]
 tags: ["Mac OS X", "シリアル", "USBシリアルケーブル", "Console", "memo"]
-summary: "Mac OS Xからコンソール接続するときの方法をすぐ忘れるのでメモ。"
+author:
+  given_name: Hideo
+  family_name: Suzuki
+  display_name: Hideo Suzuki
+summary: "Mac OS Xからコンソール接続するときの方法をすぐ忘れるのでメモ"
 ---
 
 ## 接続方法

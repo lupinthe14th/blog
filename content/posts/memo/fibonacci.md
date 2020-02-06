@@ -1,12 +1,16 @@
 ---
-Title: "fibonacci"
-Date: 2019-12-02T18:35:00+09:00
-Modified: 2019-12-02T22:31:00+09:00
+title: "fibonacci"
+date: 2019-12-02T18:35:00+09:00
+lastmod: 2019-12-02T22:31:00+09:00
 Math: true
-Category: memo
-Tags: ["go", "golang", "memo", "algorthms", "dynamic programming", "recursion"]
-Author: "Hideo Suzuki"
-Summary: "フィボナッチ数の計算。本とかでふむふむと理解したつもりで、実際に手を動かしてみると……"
+categorys:
+- memo
+tags: ["go", "golang", "memo", "algorthms", "dynamic programming", "recursion"]
+author:
+  given_name: Hideo
+  family_name: Suzuki
+  display_name: Hideo Suzuki
+Summary: "フィボナッチ数の計算。本とかでふむふむと理解したつもりで、実際に手を動かしてみる"
 ---
 
 ## Trigger
@@ -24,6 +28,7 @@ $$
   f(n)&=f(n-1)+f(n-2)
 \end{aligned}
 $$
+
 
 1. \\(f(n)\\) を求めるプログラムを作成してください。（言語は得意なもので結構です。）
 

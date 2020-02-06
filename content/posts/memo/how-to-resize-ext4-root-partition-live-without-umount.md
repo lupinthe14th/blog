@@ -1,14 +1,15 @@
 ---
-Title: "ext4 root パーティションのサイズを変更する方法"
-Date: 2019-10-18T12:00:00+09:00
-Modified: 2019-10-18T12:00:00+09:00
-Category: "memo"
-Tags: ["aws", "archlinux", "ext4", "fdisk", "growpart", "resize2fs"]
-Author: "Hideo Suzuki"
+title: "ext4 root パーティションのサイズを変更する方法"
+date: 2019-10-18T12:00:00+09:00
+lastmod: 2019-10-18T12:00:00+09:00
+categorys: ["memo"]
+tags: ["aws", "archlinux", "ext4", "fdisk", "growpart", "resize2fs"]
+author:
+  given_name: Hideo
+  family_name: Suzuki
+  display_name: Hideo Suzuki
 Summary: "awsで運用しているArchlinuxサーバのルートパーティションが100%近くなってきたのでディスクサイズの拡張を行った際のメモ"
 ---
-
-[TOC]
 
 ## 要件
 

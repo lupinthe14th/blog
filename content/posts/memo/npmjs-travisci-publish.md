@@ -1,14 +1,19 @@
 ---
-Title: "npm releasing"
-Date: 2019-11-14T21:11:00+09:00
-Modified: 2019-11-14T22:06:00+09:00
-Category: "memo"
-Tags: ["yarn", "git", "npm"]
-Author: "Hideo Suzuki"
+title: "npm releasing"
+date: 2019-11-14T21:11:00+09:00
+lastmod: 2019-11-14T22:06:00+09:00
+categories: 
+- memo
+tags:
+- yarn
+- git
+- npm
+author:
+  given_name: Hideo
+  family_name: Suzuki
+  display_name: Hideo Suzuki
 Summary: "npm package の継続的リリース作業をTravis ci使って自動化したのに動かなくなったので直したメモ"
 ---
-
-[TOC]
 
 # Trigger
 
