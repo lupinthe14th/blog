@@ -3,7 +3,7 @@ title: "fibonacci"
 date: 2019-12-02T18:35:00+09:00
 lastmod: 2019-12-02T22:31:00+09:00
 Math: true
-categorys:
+categories:
 - memo
 tags: ["go", "golang", "memo", "algorthms", "dynamic programming", "recursion"]
 author:

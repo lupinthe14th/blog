@@ -29,7 +29,7 @@ disqusShortname = "engineeringnote"
     #description = "Kiera: A Hugo theme for creative and technical writing."
     #images = [""] #This is used for opengraph/twitter cards.
     customCSS = []  #Optional Customised CSS
-    #favicon = ""
+    favicon = "favicon.ico"
 
 # uncomment to enable the Tags link on the main toolbar
   [[menu.main]]

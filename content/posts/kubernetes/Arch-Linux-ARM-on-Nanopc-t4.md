@@ -1,5 +1,5 @@
 ---
-title: Arch Linux ARM on Nanopc t4
+title: "Arch Linux ARM on Nanopc t4"
 date: 2019-12-14T20:55:00+09:00
 lastmod: 2019-12-14T22:00:00+09:00
 categories:
@@ -11,8 +11,7 @@ tags:
 - Nanopc T4
 - Rockchip RK3399
 - eMMC
-Author: Hideo Suzuki
-Summary: Cephクラスタ用に用意したFriendryElecのNanopc T4にArch Linux ARMをインストールする。Nanopc T4はM.2スロットがあり、M.2 SSDを搭載可能なのでこれでCephクラスタを構築します。今回はこのNanopc T4のeMMCにArch Linux ARMをインストールする手順について記載します。
+summary: "Cephクラスタ用に用意したFriendryElecのNanopc T4にArch Linux ARMをインストールする。Nanopc T4はM.2スロットがあり、M.2 SSDを搭載可能なのでこれでCephクラスタを構築します。今回はこのNanopc T4のeMMCにArch Linux ARMをインストールする手順について記載します。"
 ---
 
 
