@@ -2,7 +2,6 @@
 title: "ext4 root パーティションのサイズを変更する方法"
 date: 2019-10-18T12:00:00+09:00
 lastmod: 2019-10-18T12:00:00+09:00
-categorys: ["memo"]
 tags: ["aws", "archlinux", "ext4", "fdisk", "growpart", "resize2fs"]
 author:
   given_name: Hideo

@@ -2,8 +2,6 @@
 title: "npm releasing"
 date: 2019-11-14T21:11:00+09:00
 lastmod: 2019-11-14T22:06:00+09:00
-categories: 
-- memo
 tags:
 - yarn
 - git

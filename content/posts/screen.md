@@ -1,7 +1,6 @@
 ---
 title: Macでシリアル接続
 date: 2016-10-11T00:00:00+09:00
-categories: ["memo"]
 tags: ["Mac OS X", "シリアル", "USBシリアルケーブル", "Console", "memo"]
 author:
   given_name: Hideo

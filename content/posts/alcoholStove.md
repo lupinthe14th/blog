@@ -2,7 +2,6 @@
 title: アルコールストーブDIY
 date: 2013-09-07T22:37:00+09:00
 lastmod: 2015-12-17T17:00:00+09:00
-categories: ["DIY"]
 tags: ["DIY", "Alcohol Stove", "Outdoor"]
 Author: Hideo Suzuki
 Summary: アルコールストーブを DIY してみた。
