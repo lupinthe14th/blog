@@ -8,7 +8,7 @@ author:
   given_name: Hideo
   family_name: Suzuki
   display_name: Hideo Suzuki
-Summary: "フィボナッチ数の計算。本とかでふむふむと理解したつもりで、実際に手を動かしてみる"
+Summary: "フィボナッチ数の計算。本とかでふむふむと理解したつもりでしたが、実際に手を動かしてみる"
 ---
 
 ## Trigger
