@@ -3,7 +3,7 @@ title: nghttpd HTTP/2 お試し
 date: 2015-12-17T10:30:00+09:00
 tags: ["http2", "Ubuntu", "nghttp2", "nghttpd", "Systemworks", "h2load", "Hyper-V 2012 R2", "lubuntu", "benchmark"]
 summary: "C言語のHTTP/2 server の実装の一つ、 nghttpd を試しに構築してベンチマークを取得してみる。"
-draft: true
+draft: false
 ---
 
 この記事は、[http2 Advent Calendar 2015](http://qiita.com/advent-calendar/2015/http2)
