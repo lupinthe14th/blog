@@ -9,18 +9,14 @@ draft: false
 この記事は、[http2 Advent Calendar 2015](http://qiita.com/advent-calendar/2015/http2)
 の17日目の記事です。
 
-# 目次
-
-[TOC]
-
-# はじめに
+## はじめに
 
 `nginx` 、 `H2O` それぞれの HTTP/1.1 と HTTP/2 でのベンチマークを取得した。
 そのベンチマークの取得に利用したツール `h2load` は、HTTP/2 の C 言語の実装例である `nghttp2` のライブラリの一つ。
 
 このライブラリには、HTTP/2 server の、`nghttpd` もあるので、これの HTTP/2 のベンチマークを取得する。[^1]
 
-# お試し内容
+## お試し内容
 
 - `nghttpd` 実行環境を Hyper-V 2012 R2 上の仮想サーバー（Ubuntu 14.04） に構築する
 - `h2load` を用いてベンチマークを取得する
@@ -28,11 +24,11 @@ draft: false
 - SWITHING-HUB は、 1GBits/sec 規格
 - HTTP/2 で、 `nginx` のデフォルト `index.html` と、大量画像ファイル表示用 HTML でのベンチマークを取得する
 
-## 機器情報
+### 機器情報
 
 測定の際に利用する機器は以下の通り。
 
-### nghttpd サーバー
+#### nghttpd サーバー
 
 - ハードウェア: [Systemworks Server S4032](https://www.systemworks.co.jp/pms_s403x.php)
 - ハイパバイザー: Hyper-V 2012 R2
@@ -83,7 +79,7 @@ draft: false
         DISTRIB_CODENAME=trusty
         DISTRIB_DESCRIPTION="Ubuntu 14.04.3 LTS"
 
-### 負荷発生元クライアント
+#### 負荷発生元クライアント
 
 - ハードウェア: [Systemworks Server S9772](http://www.systemworks.co.jp/pms_s977x.php)
 - ハイパバイザー: Hyper-V 2012 R2
@@ -135,13 +131,13 @@ draft: false
         DISTRIB_CODENAME=vivid
         DISTRIB_DESCRIPTION="Ubuntu 15.04"
 
-### SWITCHING-HUB
+#### SWITCHING-HUB
 
 - ハードウェア情報: [コレガ CG-SW16GTXLP](http://corega.jp/prod/sw16gtxlp/index.htm)
 
-# nghttpd 実行環境の構築
+## nghttpd 実行環境の構築
 
-## 前提パッケージのインストール
+### 前提パッケージのインストール
 
 ソースからビルドする為の前提パッケージをインストールする。
 
@@ -176,7 +172,7 @@ $ LD_LIBRARY_PATH=/usr/local/lib; export LD_LIBRARY_PATH
 $ nghttpd --help
 ```
 
-## nghttpd の設定
+### nghttpd の設定
 
 `nghttpd` の設定について以下に記載する。
 
@@ -271,7 +267,7 @@ $ nghttpd --help
         </body>
         </html>
 
-## ベンチマークの取得
+### ベンチマークの取得
 
 試験内容と得られたベンチマーク値をそれぞれ記載する。
 
@@ -330,7 +326,7 @@ $ nghttpd --help
         time to 1st byte:   283.93ms    336.99ms    309.15ms     15.10ms    56.00%
         req/s (client)  :    1237.36     1255.62     1244.26        3.76    66.00%
 
-### 大量画像表示での比較
+#### 大量画像表示での比較
 
 大量に画像を表示する img.html (513Kbytes) を用いてベンチマークを取得する。
 
@@ -446,9 +442,9 @@ $ nghttpd --help
         time to 1st byte:      2.75s       3.68s       3.23s    134.29ms    66.57%
         req/s (client)  :       0.39       35.69       14.20       15.37    57.94%
 
-# 考察
+## 考察
 
-## nginx と比較用
+### nginx と比較用
 
 `nginx` との比較用でのベンチマークは、以下の表の通り。
 
@@ -458,7 +454,7 @@ Time (sec) | Requests/sec | succeeded/Requests
 
 
 
-## 大量画像表示での比較
+### 大量画像表示での比較
 
 大量画像表示でのベンチマークは、計測回毎に以下の表の通り。
 
@@ -468,12 +464,12 @@ Time (sec) | Requests/sec | succeeded/Requests
 2      | 72.37      | 1381.70      | 0.15386
 3      | 250.96     | 398.47       | 0.55272
 
-## まとめ
+### まとめ
 
 - `nginx` との比較用では、`H2O` とほぼ同じベンチマークが出た
 - 大量画像表示でも、 `H2O` とほぼ同じベンチマークが出たが、2〜3回と繰り返すと HTTP4xx のエラーが発生。この条件だと信頼性は、`H2O` に軍配があがった
 
-# 参考資料
+## 参考資料
 
 - [Nghttp2: HTTP/2 C Library - nghttp2.org](https://nghttp2.org)
 - [tatsuhiro-t/nghttp2](https://github.com/tatsuhiro-t/nghttp2)
