@@ -27,8 +27,8 @@ googleAnalytics = "UA-158665323-1"
     kaggle = "lupinthe14th"
 
 [params]
-    tagline = "Creative and technical writing notes for ordinary developers."
-    description = "Creative and technical writing notes for ordinary developers."
+    tagline = "Creative and technical writing notes for ordinary engineer."
+    description = "Creative and technical writing notes for ordinary engineer."
     images = ["./images/ogp.jpeg"] #This is used for opengraph/twitter cards.
     customCSS = []  #Optional Customised CSS
     favicon = "favicon.ico"
