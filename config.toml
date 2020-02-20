@@ -46,3 +46,6 @@ googleAnalytics = "UA-158665323-1"
 #     name = "Categories"
 #     url = "/categories"
 #     weight = 1
+
+[markup.goldmark.renderer]
+  unsafe = true
