@@ -28,7 +28,7 @@ googleAnalytics = "UA-158665323-1"
 [params]
     tagline = "Creative and technical writing notes for ordinary developers."
     description = "Creative and technical writing notes for ordinary developers."
-    images = ["./imagesogp.jpeg"] #This is used for opengraph/twitter cards.
+    images = ["./images/ogp.jpeg"] #This is used for opengraph/twitter cards.
     customCSS = []  #Optional Customised CSS
     favicon = "favicon.ico"
 
