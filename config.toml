@@ -21,9 +21,10 @@ googleAnalytics = "UA-158665323-1"
     #linkedin = "username"
     #facebook = "username"
     twitter = "hideosuzuki2"
-    #instagram = "username"
+    instagram = "lupinthe14th"
     #stackoverflow = "username"
     #youtube = "user/username" # or channel/channelname
+    kaggle = "lupinthe14th"
 
 [params]
     tagline = "Creative and technical writing notes for ordinary developers."
