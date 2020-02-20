@@ -26,9 +26,9 @@ googleAnalytics = "UA-158665323-1"
     #youtube = "user/username" # or channel/channelname
 
 [params]
-    #tagline = "A Hugo theme for creative and technical writing"
-    #description = "Kiera: A Hugo theme for creative and technical writing."
-    #images = [""] #This is used for opengraph/twitter cards.
+    tagline = "Creative and technical writing notes for ordinary developers."
+    description = "Creative and technical writing notes for ordinary developers."
+    images = ["./imagesogp.jpeg"] #This is used for opengraph/twitter cards.
     customCSS = []  #Optional Customised CSS
     favicon = "favicon.ico"
 
