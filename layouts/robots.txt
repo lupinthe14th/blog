@@ -1,6 +1,5 @@
 
 User-agent: *
-Sitemap: {{ .Site.BaseURL }}sitemap.xml
 
 {{range .Pages}}
 Disallow: {{.RelPermalink}}
