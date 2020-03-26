@@ -13,6 +13,8 @@ pygmentsCodeFences = true
 disqusShortname = "engineeringnote"
 googleAnalytics = "UA-158665323-1"
 
+enableGitInfo = true
+
 # Note: to disable a social network icon delete or comment out the corresponding line
 [author]
     name = "Hideo Suzuki"
