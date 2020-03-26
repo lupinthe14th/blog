@@ -1,6 +1,7 @@
-baseurl = "https://blog.ordinarius-fectum.net"
+baseurl = "https://blog.ordinarius-fectum.net/"
+languageCode = "ja"
 title = "engineering note"
-copyright = "Copyright &copy; 2019 - Author Name"
+copyright = "Copyright &copy; 2019 - Hideo Suzuki"
 canonifyurls = true
 theme = "hugo-kiera"
 
