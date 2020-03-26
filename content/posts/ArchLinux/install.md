@@ -2,6 +2,7 @@
 title: "Arch Linux ARM on Rasberry Pi2 インストール"
 summary: "Rasberry Pi2 に Arch Linux ARM のインストールを行い、SSH接続まで確認する。"
 date: 2016-02-28T18:00:00+09:00
+lastmod: 2016-10-17T22:55:00+09:00
 images: []
 tags: ["Rasberry Pi2", "Arm Linux ARM", "Lenovo", "USB boot", "lubuntu 14.04.2 LTS"] 
 draft: false

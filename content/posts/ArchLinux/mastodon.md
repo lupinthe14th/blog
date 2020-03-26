@@ -1,6 +1,7 @@
 ---
 title: "ArchlinuxでMastdon"
 date: 2017-04-14T00:00:00+09:00
+lastmod: 2017-04-14T00:00:00+09:00
 tags: ["Rasberry Pi", "mastodon", "aws", "USB-HDD"]
 images: []
 summary: "Archlinuxでmastodon"

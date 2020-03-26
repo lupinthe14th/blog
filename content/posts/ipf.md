@@ -1,6 +1,7 @@
 +++
 title = "AWS free で　IPF定量的プロジェクトインストール"
 date = 2014-02-20T09:22:28+09:00
+lastmod = 2014-02-22T09:22:28+09:00
 images = []
 tags = ["AWS", "ipf", "CentOS:5.6"]
 categories = []

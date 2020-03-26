@@ -1,6 +1,7 @@
 ---
 title: "MVNOのmineoに契約変更"
 date: 2016-10-12T15:13:55+09:00
+lastmod: 2016-10-15T00:13:00+09:00
 tags: ["mineo", "MVNO", "au", "iPad Air2", "iOS 9.3.5", "iOS10.0.2", "iPhone5s","データSIM", "SMS", "白ロム", "E10K"]
 summary: "iPhone5s（au）と、iPad Air2（au）をmineoに契約変更してみた。"
 draft: false

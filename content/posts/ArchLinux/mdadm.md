@@ -1,6 +1,7 @@
 ---
 title: "Rasberry Pi2 の ルートファイルシステムを HDD 化（ついでにRAID1 化）"
 date: 2016-01-14T15:00:00+09:00
+lastmod: 2016-01-14T15:00:00+09:00
 tags: ["raid", "raid1", "mdadm", "USB-HDD", "Rasberry Pi2"]
 summary: "Rasberry Pi2 のルートファイルシステムを、USB-HDD にする。ついでに、mdadm で、RAID1 構成にして、データ保存の冗長化を行う。"
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Github SSH 接続手順: 二段階認証対応"
 date: 2015-11-20T15:00:00+09:00
+lastmod: 2015-12-08T09:38:00+09:00
 tags: ["Github", "SSH", "Mac"]
 summary: "Github を二段階認証にするとSSH 接続でしか Push 出来ないのでその方法をまとめる"
 draft: false

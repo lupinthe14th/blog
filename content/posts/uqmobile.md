@@ -1,6 +1,7 @@
 ---
 title: "UQ mobile で　MVNO デビュー"
 date: 2016-02-09T00:00:00+09:00
+lastmod: 2016-02-09T00:00:00+09:00
 tags: ["UQ mobile", "MVNO", "au", "iPad Air2", "iOS 9.2.1"]
 summary: "iPad Air2 (au版) を UQ mobile で MVNO デビュー"
 draft: false

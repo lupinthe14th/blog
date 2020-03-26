@@ -1,6 +1,7 @@
 ---
 title: "H2O HTTP/2 お試し"
 date: 2015-12-15T16:00:00+09:00
+lastmod: 2015-12-15T16:41:00+09:00
 tags: ["http2", "Ubuntu", "h2o", "Systemworks", "h2load", "Hyper-V 2012 R2", "lubuntu", "benchmark"]
 summary: "HTTP/1.x HTTP/2 に最適化された Web サーバーの実装の一つ、H2O を試しに構築してベンチマークを取得してみる。"
 draft: false

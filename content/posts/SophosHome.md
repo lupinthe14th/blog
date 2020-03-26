@@ -1,6 +1,7 @@
 +++
 title = "Sophos home 使ってみる"
 date = 2016-07-01T00:00:00+09:00
+lastmod = 2016-07-01T00:00:00+09:00
 images = []
 tags = ["Sophos", "Anti-virus", "malware", "Web Protection", "Web Category Access"]
 draft = false

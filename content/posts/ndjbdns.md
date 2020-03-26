@@ -2,6 +2,7 @@
 title: "N-DJBDNS インストールおよび設定手順"
 summary: "もっともセキュアと言われている N-DJBDNS のインストールと設定"
 date: 2015-11-23T17:00:00+09:00
+lastmod: 2015-11-23T17:00:00+09:00
 tags: ["Rasberry Pi2", "ubuntu", "14.04", "trusty", "N-DJBDNS", "djbdns", "oss", "dnscache", "tinydns"]
 ---
 

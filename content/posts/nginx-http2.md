@@ -1,6 +1,7 @@
 ---
 title: "nginx HTTP/2 お試し"
 date: 2015-12-09T17:40:00+09:00
+lastmod: 2015-12-15T16:41:00+09:00
 tags: ["http2", "Ubuntu", "nginx", "Systemworks", "h2load", "Hyper-V 2012 R2", "benchmark"]
 summary: "nginx 1.9.5 で HTTP/2 がサポートされたので試しに構築してベンチマーク取得してみた。"
 draft: false
