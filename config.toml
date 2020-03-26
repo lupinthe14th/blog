@@ -14,9 +14,15 @@ disqusShortname = "engineeringnote"
 googleAnalytics = "UA-158665323-1"
 
 enableGitInfo = true
+enableRobotsTXT = true
+
+[sitemap]
+    changefreq = "monthly"
+    filename = "sitemap.xml"
+    priority = 0.5
 
 [frontmatter]
-lastmod = ["lastmod", ":git", "date", "publishDate"]
+    lastmod = ["lastmod", ":git", "date", "publishDate"]
 
 # Note: to disable a social network icon delete or comment out the corresponding line
 [author]
@@ -53,4 +59,4 @@ lastmod = ["lastmod", ":git", "date", "publishDate"]
 #     weight = 1
 
 [markup.goldmark.renderer]
-  unsafe = true
+    unsafe = true
