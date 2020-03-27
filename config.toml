@@ -59,5 +59,11 @@ enableRobotsTXT = true
 #     url = "/categories"
 #     weight = 1
 
-[markup.goldmark.renderer]
-    unsafe = true
+[markup]
+    [markup.goldmark.renderer]
+        unsafe = true
+
+    [markup.tableOfContents]
+        endLevel = 3
+        ordered = true
+        startLevel = 2

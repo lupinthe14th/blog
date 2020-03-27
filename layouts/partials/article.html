@@ -1,0 +1,22 @@
+<article>
+
+    <h1>{{ .Title }}</h1>
+
+    {{ if or (not (isset .Params "meta")) (eq .Params.meta true) }}
+      {{ partial "aside" . }}
+    {{ end }}
+
+    {{ partial "featured_image" . }}
+
+    {{ if and (gt .WordCount 400 ) (ne .Params.toc "false") }}
+    <div class="toc">
+    <aside>
+    <p>Table of Contents</p>
+    {{.TableOfContents}}
+    </aside>
+    </div>
+    {{ end }}
+
+    {{ .Content }}
+
+</article>
