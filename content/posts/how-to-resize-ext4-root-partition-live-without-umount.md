@@ -8,6 +8,8 @@ author:
   family_name: Suzuki
   display_name: Hideo Suzuki
 Summary: "awsで運用しているArchlinuxサーバのルートパーティションが100%近くなってきたのでディスクサイズの拡張を行った際のメモ"
+aliases:
+  - /ext4-root-pateishiyonnosaizuwobian-geng-surufang-fa.html
 ---
 
 ## 要件

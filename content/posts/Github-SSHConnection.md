@@ -5,6 +5,8 @@ lastmod: 2015-12-08T09:38:00+09:00
 tags: ["Github", "SSH", "Mac"]
 summary: "Github を二段階認証にするとSSH 接続でしか Push 出来ないのでその方法をまとめる"
 draft: false
+aliases:
+  - /Github-SSHConnection.html
 ---
 
 Github を二段階認証にすると SSH 接続でしか Push 出来なくなる。

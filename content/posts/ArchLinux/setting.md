@@ -4,6 +4,8 @@ summary: "Rasberry Pi2 インストールした Arch Linux ARM の初期設定�
 date: 2016-10-13T02:15:00+09:00
 lastmod: 2016-10-18T02:00:00+09:00
 tags: ["Rasberry Pi2", "Arm Linux ARM", "gvim", "tmux", "pacman", "sysctl", "netctl"]
+aliases:
+  - /arch-linux-arm-on-rasberry-pi2-nochu-qi-she-ding.html
 ---
 
 ## はじめに
