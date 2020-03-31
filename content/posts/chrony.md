@@ -4,6 +4,8 @@ summary: "NTPクライアントとNTPサーバーの実装のひとつchronyの�
 date: 2015-11-30T18:00:00+09:00
 lastmod: 2015-11-30T18:00:00+09:00
 tags: ["Rasberry Pi2", "ubuntu", "14.04", "trusty", "oss", "chrony", "ntp"]
+aliases:
+    - /chrony.html
 ---
 
 ## chronyインストールおよび設定手順

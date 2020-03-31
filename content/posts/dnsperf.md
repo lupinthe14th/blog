@@ -4,6 +4,8 @@ date: 2015-12-03T15:00:00+09:00
 lastmod: 2015-12-03T15:00:00+09:00
 tags: ["dns", "ndjbdns", "Mac", "dnsperf", "resperf", "Rasberry Pi2"]
 summary: "DNS ストレスツール Nominum dnsperf / resperf を用いた Rasberry Pi2 で作ったNDJBDNS キャッシュサーバーのストレステスト"
+aliases:
+    - /dnsperf.html
 ---
 
 ## 動機
