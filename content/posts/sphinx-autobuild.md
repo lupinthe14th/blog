@@ -5,6 +5,8 @@ lastmod: 2015-12-04T18:00:00+09:00
 tags: ["Sphinx", "Mac"]
 summary: "Sphinx を用いたドキュメント作成でのローカル確認に便利なsphinx-autobuildについて"
 draft: false
+aliases:
+  - /sphinx-autobuild.html
 ---
 
 ## はじめに

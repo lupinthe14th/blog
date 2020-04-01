@@ -8,6 +8,8 @@ author:
   family_name: Suzuki
   display_name: Hideo Suzuki
 summary: "Mac OS Xからコンソール接続するときの方法をすぐ忘れるのでメモ"
+aliases:
+ - /macdeshiriarujie-sok.html
 ---
 
 ## 接続方法

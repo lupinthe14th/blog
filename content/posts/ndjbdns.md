@@ -4,6 +4,8 @@ summary: "もっともセキュアと言われている N-DJBDNS のインスト
 date: 2015-11-23T17:00:00+09:00
 lastmod: 2015-11-23T17:00:00+09:00
 tags: ["Rasberry Pi2", "ubuntu", "14.04", "trusty", "N-DJBDNS", "djbdns", "oss", "dnscache", "tinydns"]
+aliases:
+  - /ndjbdns.html
 ---
 
 Rasberry Pi2 (Ubuntu 14.04 arm) へ、もっともセキュアと言われている N-DJBDNS のインストールと設定を行います。
