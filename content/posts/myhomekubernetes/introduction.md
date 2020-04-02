@@ -87,7 +87,7 @@ Rasberry Piなどのsingle board computerを使っておうちKubernetes環境�
 
 ## 実践
 
-続く。
+[おうちKubernetes ~ 環境編 ~]({{< ref "/posts/myhomekubernetes/env.md" >}})へ続く。
 
 ハードの追加を容易にしたい構想は、試してみましたが私には実現することができませんでした。[^3] ARMなsingle board computer を使う前提を変えればできたかもしれませんが今回はやめました。
 
