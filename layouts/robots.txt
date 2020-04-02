@@ -1,6 +1,7 @@
 
 User-agent: *
 
+Disallow: /images
 {{range .Pages}}
 Disallow: {{.RelPermalink}}
 {{end}}
