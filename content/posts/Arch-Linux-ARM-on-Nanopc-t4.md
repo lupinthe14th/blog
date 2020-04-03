@@ -33,9 +33,8 @@ Cephクラスタ用に用意したFriendryElecのNanopc T4にArch Linux ARMを�
 
 1. sudoパッケージのインストールと設定
 
-    SeeAlso: 
-
-    [https://lupinthe14th.github.io/arch-linux-arm-on-rasberry-pi2-nochu-qi-she-ding.html#sudo](https://lupinthe14th.github.io/arch-linux-arm-on-rasberry-pi2-nochu-qi-she-ding.html#sudo)
+    SeeAlso
+    : [sudo]({{< ref "/posts/archlinux/setting.md#sudo-のインストール" >}})
 
 1. ホームディレクトリにbuildディレクトリを作成
 

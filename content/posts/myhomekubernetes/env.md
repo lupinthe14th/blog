@@ -40,4 +40,4 @@ draft: false
 |Rasberry Pi 2|ArchLinux ARM||
 
 
-続く
+[おうちKubernetes ~ 構築編 ~]({{< ref "/posts/myhomekubernetes/build.md" >}})へ続く。
