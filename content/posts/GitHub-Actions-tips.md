@@ -17,12 +17,8 @@ GitHub Actionでテストを回していると時折 ステータスチェック
 
 ### 回避策
 
-空コミットをして、プッシュする。
+空コミット `git commit --allow-empty -m "wakey wakey GitHub Actions"` [^1] してプッシュする。
 
-```console
-git commit --allow-empty -m "wakey wakey GitHub Actions" [^1]
-git push
-```
 
 [^1]: wakey wakey とは起きろ!の意
 
