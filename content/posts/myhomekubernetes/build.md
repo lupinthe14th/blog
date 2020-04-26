@@ -269,4 +269,4 @@ SeeAlso
 
 
 
-続く。
+[おうちKubernetes ~ 手作業によるバージョンアップグレード編 ~]({{< ref "/posts/myhomekubernetes/upgrade.md" >}})へ続く。
