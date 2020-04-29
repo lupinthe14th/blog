@@ -260,6 +260,58 @@ SeeAlso
 kubectl label node knalarmpi2001 node-role.kubernetes.io/worker=worker
 ```
 
+## MetalLBの導入
+
+Service の type LoadBalancer を使えるようにするため、bare metal Kubernetes クラスタ用のロードバランサー実装を導入します。
+
+基本的にはオフィシャルサイトのインストール手順の通りです。
+
+
+### 準備
+
+kube-proxyを IPVS モードで実行している場合はstrict ARP を有効にする必要があるようですが、自環境はそのモードで実行していなかったので設定は行っていません。
+
+### マニフェストによるインストール
+
+何も考えず[オフィシャルページ](https://metallb.universe.tf/installation/#installation-by-manifest)にあるコマンドを実行します。
+
+```
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/metallb.yaml
+# On first install only
+kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
+```
+
+### コンフィグレーション
+
+自環境でBGP使えるか調べたのですがダメそうなので、L2の設定を行います。
+
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: metallb-system
+  name: config
+data:
+  config: |
+    address-pools:
+    - name: default
+      protocol: layer2
+      addresses:
+      - 10.9.8.240-10.9.8.250
+```
+
+これで `kubectl port-forward` を都度行わなくて済みます。 [^1]
+
+[^1]: とはいっても、EXTERNAL-IP をデプロイしたタイミングに `kubectl get svc` で調べる必要があります。
+
+SeeAlso:
+- [Kubernetes 1.16をオンプレ環境にインストールしてみた - MetalLBの導入](https://qiita.com/rltnm7/items/3e3948893983737f736b#metallb%E3%81%AE%E5%B0%8E%E5%85%A5)
+- [オンプレK8sで使えるGoogle製External Load Balancer: MetalLB](https://qiita.com/tmatsu/items/f45f0ca07b4f8489df85)
+- [KubernetesロードバランサーのMetalLBを導入した話(Necoプロジェクト体験入部)](https://blog.cybozu.io/entry/2019/03/25/093000)
+- [Using Kubernetes ExternalDNS & MetalLB with a Home/Bare Metal K8S: Part 1](https://blog.cowger.us/2018/07/25/using-kubernetes-externaldns-with-a-home-bare-metal-k8s.html)
+- [METALLB](https://metallb.universe.tf/)
+
 ## TLS bootstrappingの設定
 
 TODO
