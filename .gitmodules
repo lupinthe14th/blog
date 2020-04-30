@@ -1,3 +1,6 @@
 [submodule "themes/hugo-kiera"]
 	path = themes/hugo-kiera
 	url = https://github.com/funkydan2/hugo-kiera.git
+[submodule ".prh-rules"]
+	path = .prh-rules
+	url = https://github.com/prh/rules.git
