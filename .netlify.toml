@@ -5,8 +5,8 @@ command = "hugo"
 [build.environment]
 HUGO_VERSION = "0.69.2"
 
-[context.deploy-preview]
+[context.staging.deploy-preview]
 command = "hugo -b $DEPLOY_PRIME_URL"
 
-[context.branch-deploy]
+[context.staging.branch-deploy]
 command = "hugo -b $DEPLOY_PRIME_URL"
