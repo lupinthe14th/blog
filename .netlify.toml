@@ -1,12 +1,8 @@
 [build]
-publish = "public"
-command = "hugo"
+  publish = "public"
+  command = "hugo"
+  [build.environment]
+    HUGO_VERSION = "0.69.2"
 
-[build.environment]
-HUGO_VERSION = "0.69.2"
-
-[context.staging.deploy-preview]
-command = "hugo -b $DEPLOY_PRIME_URL"
-
-[context.staging.branch-deploy]
-command = "hugo -b $DEPLOY_PRIME_URL"
+[context.staging]
+  command = "hugo -b $DEPLOY_PRIME_URL"
