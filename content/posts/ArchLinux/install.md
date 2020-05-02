@@ -4,17 +4,17 @@ summary: "Rasberry Pi2 に Arch Linux ARM のインストールを行い、SSH�
 date: 2016-02-28T18:00:00+09:00
 lastmod: 2016-10-17T22:55:00+09:00
 images: []
-tags: ["Rasberry Pi2", "Arm Linux ARM", "Lenovo", "USB boot", "lubuntu 14.04.2 LTS"] 
+tags: ["Rasberry Pi2", "Arm Linux ARM", "Lenovo", "USB boot", "lubuntu 14.04.2 LTS"]
 draft: false
 ---
 
 
 ## ゴール
-Rasberry Pi2 に Arch Linux ARM のインストールを行い、ssh にて接続できる事をゴールとする。
+Rasberry Pi2 に Arch Linux ARM のインストールを行い、ssh にて接続できることをゴールとする。
 
 
 ### 前提
-以下の機器を用いている。
+次の機器を用いている。
 
 - Lenovo G570
 - MacBook Air
@@ -32,7 +32,7 @@ Rasberry Pi2 に Arch Linux ARM のインストールを行い、ssh にて接�
 ### 前準備
 
 1. Lenovo G570のBIOSをUSBメモリからbootするように変更する
-1. USBメモリを挿し、電源ONでlubuntuで起動させる
+1. USBメモリを挿し、電源ONでlubuntuを起動させる
 1. bsdtarをインストールする
 
    ```
@@ -44,7 +44,7 @@ Rasberry Pi2 に Arch Linux ARM のインストールを行い、ssh にて接�
 ### インストール
 
 - [Raspberry Pi 2 | Arch Linux ARM](https://archlinuxarm.org/platforms/armv7/broadcom/raspberry-pi-2)
-の通りインストールを行う。
+のとおりインストールを行う。
 
 - 対象デバイスは ```ls -al /dev/sd*``` でデバイスを確認し、 ```fdisk``` で中身を確認して間違えないようにする。
 
@@ -57,7 +57,7 @@ Rasberry Pi2 に Arch Linux ARM のインストールを行い、ssh にて接�
 
 アカウントとパスワードは
 [Raspberry Pi 2 | Arch Linux ARM](https://archlinuxarm.org/platforms/armv7/broadcom/raspberry-pi-2)
-の通り。
+のとおり。
 
 ### IPアドレスの調査
 
@@ -79,12 +79,13 @@ Welcome to Arch Linux ARM
          IRC: #archlinux-arm on irc.Freenode.net
 ```
 
-無事SSH接続出来ました。
+無事SSH接続できました。
 
 ## 所感
 
-当初はMacBook AirでなんとかArchLinuxのSDカードを作ろうとしていたが、手元にあるLenobo G570とlubuntuのUSBメモリでLinuxが利用できることに気がついたので、オフィシャルサイトの手順で作成できるこの方法に落ち着いた。
-イメージファイルをダウンロードして ```dd``` で作成しようとしたが、イメージファイルが古いのしか見つけられなかったのもこの方法を選択した要因でもある。
+当初はMacBook AirでなんとかArchLinuxのSDカードを作ろうとしていました。
+しかし手元にあるLenobo G570とlubuntuのUSBメモリでLinuxが利用できることに気がついたので、オフィシャルサイトの手順で作成できるこの方法に落ち着きました。
+イメージファイルをダウンロードして ```dd``` で作成しようとしましたが、イメージファイルが古いのしか見つけられなかったのもこの方法を選択した要因でもあります。
 
 ## 参考文献
 

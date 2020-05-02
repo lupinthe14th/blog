@@ -25,7 +25,7 @@ Cephクラスタ用に用意したFriendryElecのNanopc T4にArch Linux ARMを�
 
 ## Process details
 
-以下の手順をマイクロSDとeMMCへのインストールの為、都合2回ずつ実施する。
+次の手順をマイクロSDとeMMCへのインストールの為、都合2回ずつ実施する。
 
 ### Preparation
 
@@ -38,7 +38,7 @@ Cephクラスタ用に用意したFriendryElecのNanopc T4にArch Linux ARMを�
 
 1. ホームディレクトリにbuildディレクトリを作成
 
-        cd ~/      
+        cd ~/
         mkdir build
         cd build/
 
@@ -48,7 +48,7 @@ Cephクラスタ用に用意したFriendryElecのNanopc T4にArch Linux ARMを�
 
 1. カーネルパッケージファイルの取得
 
-    カスタマイズの起点となる綺麗なカーネルが必要になるのでABSからカーネルパッケージファイルを取得する
+    カスタマイズの起点となるきれいなカーネルが必要になるのでABSからカーネルパッケージファイルを取得する
 
         ASPROOT=. asp checkout linux
 
