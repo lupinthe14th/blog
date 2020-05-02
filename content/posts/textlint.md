@@ -1,7 +1,7 @@
 ---
 title: "ブログ記事のプルリクエストレビュー化"
 date: 2020-04-30T18:16:05+09:00
-tags: ["blog","textlint","ci","github action", "reviewdog", "netlify"]
+tags: ["blog", "textlint", "ci", "github action", "reviewdog", "netlify", "hugo"]
 draft: false
 ---
 
@@ -10,9 +10,9 @@ draft: false
 
 ## Netlifyの設定変更
 
-[Branch deploy controls](https://docs.netlify.com/site-deploys/overview/#branch-deploy-controls)のとおり設定すれば行けると思いました。
+[Branch deploy controls](https://docs.netlify.com/site-deploys/overview/#branch-deploy-controls)のとおり設定します。
 
-が、記事一覧から該当ページを表示させるとProductionページにリンクして404 Not Foundになってしまいます。
+この設定だけでは、記事一覧から該当ページを表示させるとProductionページにリンクします。
 
 そこで、[Correct BaseURL on Netlify previews](https://discourse.gohugo.io/t/correct-baseurl-on-netlify-previews/10429)を参考にDeploy Previewの場合に実行するビルドコマンドのオプションを追加して、Deploy Preview用のベースURLを設定します。
 
@@ -85,7 +85,7 @@ HUGO_VERSION = "0.69.2"
               github_token: ${{ secrets.github_token }}
               reporter: github-pr-review
               textlint_flags: "content/**"
-    
+
     ```
 
 1. [prh/rules](https://github.com/prh/rules) をサブモジュールとして追加
@@ -130,10 +130,11 @@ HUGO_VERSION = "0.69.2"
     ```yaml
     ---
     version: 1
-    
+
     imports:
       - ./.prh-rules/media/techbooster.yml
       - ./.prh-rules/files/markdown.yml
     ```
 
+これでプルリクエストレビューができるようになりました。
 予想以上にtextlintの指摘が多いので、手元でもできるようにしよう。
