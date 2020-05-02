@@ -5,7 +5,11 @@ tags: ["blog", "textlint", "ci", "github action", "reviewdog", "netlify", "hugo"
 draft: false
 ---
 
-文章校正は [textlint](https://textlint.github.io/) を使い、実行はGithub Actionで行い、Reviewdogにコメントさせます。
+私の国語力の問題から、冗長な言い回しが多かったり、二重否定してしまうことがよくあります。
+個人的なブログでは誰も指摘してくれません。
+
+そこで文章校正は [textlint](https://textlint.github.io/) を使い、実行はGithub Actionで行い、Reviewdogにコメントさせます。
+
 また、netlifyのBranch deploy controlsを使ってBranch deployを行いDeploy PreviewしてからProduction deployさせるようにします。
 
 ## Netlifyの設定変更
