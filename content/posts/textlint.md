@@ -18,7 +18,7 @@ draft: false
 
 
 ```bash
-vi .netlify.toml
+vi netlify.toml
 ```
 
 ```toml
