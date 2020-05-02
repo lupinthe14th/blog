@@ -129,7 +129,11 @@ HUGO_VERSION = "0.69.2"
     }
     ```
 
-1. prh.yml の作成
+1. .prh.yml の作成
+
+    ```bash
+    vi .prh.yml
+    ```
 
     ```yaml
     ---
