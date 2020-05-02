@@ -10,8 +10,39 @@ draft: false
 
 ## Netlifyの設定変更
 
-[Branch deploy controls](https://docs.netlify.com/site-deploys/overview/#branch-deploy-controls)のとおり設定を行います。
+[Branch deploy controls](https://docs.netlify.com/site-deploys/overview/#branch-deploy-controls)のとおり設定すれば行けると思いました。
 
+が、記事一覧から該当ページを表示させるとProductionページにリンクして404 Not Foundになってしまいます。
+
+そこで、[Correct BaseURL on Netlify previews](https://discourse.gohugo.io/t/correct-baseurl-on-netlify-previews/10429)を参考にDeploy Previewの場合に実行するビルドコマンドのオプションを追加して、Deploy Preview用のベースURLを設定します。
+
+
+```bash
+vi .netlify.toml
+```
+
+```toml
+[build]
+publish = "public"
+command = "hugo"
+
+[context.production.environment]
+HUGO_VERSION = "0.69.2"
+HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
+
+[context.deploy-preview]
+command = "hugo -b $DEPLOY_PRIME_URL"
+
+[context.deploy-preview.environment]
+HUGO_VERSION = "0.69.2"
+
+[context.branch-deploy]
+command = "hugo $DEPLOY_PRIME_URL"
+
+[context.branch-deploy.environment]
+HUGO_VERSION = "0.69.2"
+```
 
 ## 文章校正のCI化
 
@@ -21,9 +52,10 @@ draft: false
 
     ```bash
     mkdir -p .github/workflows
+    vi .github/workflows/reviewdog.yaml
     ```
 
-    ```yaml:.github/workflows/reviewdog.yaml
+    ```yaml
     ---
     name: reviewdog
     on: [pull_request]
@@ -66,7 +98,7 @@ draft: false
 
    設定内容は好みで修正します。
 
-    ```
+    ```json
     {
       "plugins": {
         "@textlint/markdown": {
@@ -95,13 +127,13 @@ draft: false
 
 1. prh.yml の作成
 
-   ```
-   ---
-   version: 1
-   
-   imports:
-     - ./.prh-rules/media/techbooster.yml
-     - ./.prh-rules/files/markdown.yml
-   ```
+    ```yaml
+    ---
+    version: 1
+    
+    imports:
+      - ./.prh-rules/media/techbooster.yml
+      - ./.prh-rules/files/markdown.yml
+    ```
 
-以上。終わり。
+予想以上にtextlintの指摘が多いので、手元でもできるようにしよう。
