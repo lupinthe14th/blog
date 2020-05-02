@@ -10,7 +10,7 @@ draft: false
 
 ## Netlifyの設定変更
 
-[Branch deploy controls](https://docs.netlify.com/site-deploys/overview/#branch-deploy-controls)の通り設定を行います。
+[Branch deploy controls](https://docs.netlify.com/site-deploys/overview/#branch-deploy-controls)のとおり設定を行います。
 
 
 ## 文章校正のCI化
