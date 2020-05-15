@@ -1,7 +1,7 @@
 ---
 title: "Coredumpでお亡くなり"
 date: 2020-05-15T10:56:41+09:00
-tags: ["coredump", "archlinux", "Nanopc T4"]
+tags: ["coredump", "archlinux", "Nanopc T4", "trouble shooting"]
 draft: false
 ---
 
