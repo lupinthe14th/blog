@@ -40,7 +40,7 @@ Dockerのランタイムのコアなcontenadを使います。
 pacman -Sy containerd --noconfirm
 ```
 
-設定は[こちら](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd)を参照して次の通り実施します。
+設定は[こちら](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd)を参照して次のとおり実施します。
 
 ##### Prerequisites
 
