@@ -1,11 +1,7 @@
 ---
 title: "おうちKubernetes ~ 構築編 ~"
 date: 2020-04-03T15:43:21+09:00
-tags:
-- Kubernetes
-- Memo
-- arm
-- single board computer
+tags: ["Kubernetes", "Memo", "arm", "single board computer"]
 draft: false
 ---
 
@@ -25,7 +21,7 @@ draft: false
 ### Server
 #### Prerequirement
 
-MACアドレスとproduct_uuidが全てのノードでユニークであることを確認します。
+MACアドレスとproduct_uuidがすべてのノードでユニークであることを確認します。
 
 - You can get the MAC address of the network interfaces using the command **`ip link`** or **`ifconfig -a`**
 - The product_uuid can be checked by using the command **`sudo cat /sys/class/dmi/id/product_uuid`**
@@ -40,15 +36,15 @@ Dockerのランタイムのコアなcontenadを使います。
 
 ##### Install containerd
 
-```
+```fish
 pacman -Sy containerd --noconfirm
 ```
 
-設定は[こちら](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd)を参照して以下の通り実施します。
+設定は[こちら](https://kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd)を参照して次の通り実施します。
 
 ##### Prerequisites
 
-```
+```fish
 cat > /etc/modules-load.d/containerd.conf <<EOF
 overlay
 br_netfilter
@@ -67,9 +63,13 @@ EOF
 sysctl --system
 ```
 
+```fish
+pacman -Sy libseccomp --noconfirm
+```
+
 ##### Configure containerd
 
-```
+```fish
 mkdir -p /etc/containerd
 containerd config default > /etc/containerd/config.toml
 sed -i 's/systemd_cgroup = false/systemd_cgroup = true/' /etc/containerd/config.toml
@@ -77,7 +77,7 @@ sed -i 's/systemd_cgroup = false/systemd_cgroup = true/' /etc/containerd/config.
 
 ##### Restart containerd
 
-```
+```fish
 systemctl enable containerd
 systemctl start containerd
 ```
@@ -87,13 +87,13 @@ SeeAlso
 
 ##### Installing Container Runtime Interface
 
-criが必要なため、リソースリポジトリの[Readme](https://github.com/kubernetes-sigs/cri-tools#install-critest)の通りインストールします。
+criが必要なため、リソースリポジトリの[Readme](https://github.com/kubernetes-sigs/cri-tools#install-critest)のとおりインストールします。
 containerdを使うため、crictlの設定でruntime-endpointの設定をcontainerdに向けます。
 
 実行する環境のアーキテクチャに応じて、変数を**`ARCH="arm64"`** か **`ARCH="arm"`**を設定します。
 
 
-```
+```fish
 VERSION="v1.15.0"
 curl -LO https://github.com/kubernetes-sigs/cri-tools/releases/download/$VERSION/crictl-$VERSION-linux-$ARCH.tar.gz
 sudo tar zxvf crictl-$VERSION-linux-$ARCH.tar.gz -C /usr/local/bin
@@ -106,7 +106,7 @@ EOF
 
 ##### Installing Container Network Interface
 
-```
+```fish
 VERSION="v0.7.1"
 curl -LO https://github.com/containernetworking/plugins/releases/download/$VERSION/cni-plugins-$ARCH-$VERSION.tgz
 mkdir -p ./bin
@@ -122,18 +122,18 @@ rm -f cni-plugins-$ARCH-$VERSION.tgz
 ArchLinuxはpacmanでインストールできなかったので、バイナリをダウンロードしてインストールします。下記は手順作成時点で最新の[v1.15.3](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.15.md#v1153)を用いるので、**`VERSION="v1.15.3"`**をセットします。
 また役割はサーバーなので、**`ROLE="server"`**をセットします。
 
-2つの変数をセットした後、以下のコマンドを実行してインストールします。
+2つの変数をセットした後、次のコマンドを実行してインストールします。
 
 ##### resource download and extract files from an archive
 
-```
+```fish
 curl -LO https://dl.k8s.io/$VERSION/kubernetes-$ROLE-linux-$ARCH.tar.gz
 tar xvfz kubernetes-$ROLE-linux-$ARCH.tar.gz
 ```
 
 ##### kubeadm
 
-```
+```fish
 install -m 755 -d /etc/systemd/system/kubelet.service.d/
 install -p -m 755 -t /usr/bin/ kubernetes/$ROLE/bin/kubeadm
 
@@ -157,7 +157,7 @@ EOF
 
 ##### kubelet
 
-```
+```fish
 pacman -Sy ebtables ethtool socat ipvsadm --noconfirm
 install -p -m 755 -t /usr/bin/ kubernetes/$ROLE/bin/kubelet
 install -m 755 -d /etc/kubernetes/manifests/
@@ -165,7 +165,7 @@ install -m 755 -d /etc/kubernetes/manifests/
 curl https://raw.githubusercontent.com/kubernetes/kubernetes/$VERSION/build/debs/kubelet.service > /etc/systemd/system/kubelet.service
 
 cat > /etc/systemd/system/kubelet.service.d/0-containerd.conf <<EOF
-[Service]                                                 
+[Service]
 Environment="KUBELET_EXTRA_ARGS=--container-runtime=remote --runtime-request-timeout=15m --container-runtime-endpoint=unix:///run/containerd/containerd.sock"
 EOF
 
@@ -175,13 +175,13 @@ systemctl enable --now kubelet
 
 ##### kubectl
 
-```
+```fish
 install -p -m 755 -t /usr/bin/ kubernetes/$ROLE/bin/kubectl
 ```
 
 ##### clean up
 
-```
+```fish
 rm -f kubernetes-$ROLE-linux-$ARCH.tar.gz
 rm -fR kubernetes/
 ```
@@ -190,7 +190,7 @@ rm -fR kubernetes/
 
 後述するpod network add-onは、armおよびarm64で動くflannelを使います。flannelの場合、kubeadm init にオプション**`--pod-network-cidr=10.244.0.0/16`**を渡します（MUST）。
 
-```
+```fish
 kubeadm init --cri-socket=/run/containerd/containerd.sock --pod-network-cidr=10.244.0.0/16
 
 mkdir -p $HOME/.kube
@@ -206,13 +206,13 @@ SeeAlso
 
 [ここ](https://itnext.io/benchmark-results-of-kubernetes-network-plugins-cni-over-10gbit-s-network-updated-april-2019-4a9886efe9c4)によると、低リソースノードがある場合はflannelを使うとあるので、これを利用します。
 
-```
+```fish
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/62e44c867a2846fefb68bd5f178daf4da3095ccb/Documentation/kube-flannel.yml
 ```
 
 #### Control plane node isolation
 
-```
+```fish
 kubectl taint nodes --all node-role.kubernetes.io/master-
 ```
 
@@ -221,7 +221,6 @@ kubectl taint nodes --all node-role.kubernetes.io/master-
 #### Prerequirement
 
 [Server]({{< ref "#prerequirement" >}})と同様に前提条件を確認します。
-
 
 #### [Installing runtime](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-runtime)
 
@@ -233,16 +232,16 @@ kubectl taint nodes --all node-role.kubernetes.io/master-
 
 #### Join your nodes
 
-kubeadm initが成功した場合に出力される情報を用いてnodeをクラスターに参加させます。
+`kubeadm init`が成功した場合に出力される情報を用いてnodeをクラスターに参加させます。
 
-```
+```fish
 kubeadm join 10.9.8.45:6443 --token zww3no.2tz9vb782dibmrfo \
 --discovery-token-ca-cert-hash sha256:22cc9bc5daa488ba7bd8f2233ab9344031534c14ac499f8929f1c5b0520553fc
 ````
 
-デフォルトで24時間でトークンの有効期限が切れます。有効期限が切れた場合は以下参考にしてトークンを作成し、それを用いてクラスターに参加させます。
+デフォルトでは24時間でトークンの有効期限が切れます。有効期限が切れた場合は以下参考にしてトークンを作成し、それを用いてクラスターに参加させます。
 
-```
+```fish
 export KUBECONFIG=/etc/kubernetes/admin.conf
 kubeadm token create
 openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | \
@@ -256,7 +255,7 @@ kubeadm join 10.9.8.45:6443 --token d9rpan.9pxae3hotvpywoza \
 SeeAlso
 : [Creating a single control-plane cluster with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#join-nodes)
 
-```
+```fish
 kubectl label node knalarmpi2001 node-role.kubernetes.io/worker=worker
 ```
 
@@ -264,7 +263,7 @@ kubectl label node knalarmpi2001 node-role.kubernetes.io/worker=worker
 
 Service の type LoadBalancer を使えるようにするため、bare metal Kubernetes クラスタ用のロードバランサー実装を導入します。
 
-基本的にはオフィシャルサイトのインストール手順の通りです。
+基本的にはオフィシャルサイトのインストール手順のとおりです。
 
 
 ### 準備
@@ -275,7 +274,7 @@ kube-proxyを IPVS モードで実行している場合はstrict ARP を有効�
 
 何も考えず[オフィシャルページ](https://metallb.universe.tf/installation/#installation-by-manifest)にあるコマンドを実行します。
 
-```
+```fish
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/metallb.yaml
 # On first install only
@@ -286,7 +285,7 @@ kubectl create secret generic -n metallb-system memberlist --from-literal=secret
 
 自環境でBGP使えるか調べたのですがダメそうなので、L2の設定を行います。
 
-```
+```fish
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -311,14 +310,5 @@ SeeAlso:
 - [KubernetesロードバランサーのMetalLBを導入した話(Necoプロジェクト体験入部)](https://blog.cybozu.io/entry/2019/03/25/093000)
 - [Using Kubernetes ExternalDNS & MetalLB with a Home/Bare Metal K8S: Part 1](https://blog.cowger.us/2018/07/25/using-kubernetes-externaldns-with-a-home-bare-metal-k8s.html)
 - [METALLB](https://metallb.universe.tf/)
-
-## TLS bootstrappingの設定
-
-TODO
-
-SeeAlso
-: [TLS bootstrappingでkubeletクライアント証明書の作成、更新を自動化する - Qiita](https://qiita.com/oke-py/items/cf83a174c5e95c9cbe0e)
-
-
 
 [おうちKubernetes ~ 手作業によるバージョンアップグレード編 ~]({{< ref "/posts/myhomekubernetes/upgrade.md" >}})へ続く。
