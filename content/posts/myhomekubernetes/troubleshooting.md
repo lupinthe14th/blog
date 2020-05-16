@@ -1,5 +1,5 @@
 ---
-title: "Trouble Shooting"
+title: "Kubernetes Trouble Shooting"
 date: 2020-05-16T07:52:20+09:00
 tags: ["Kubernetes", "Memo", "arm", "single board computer", "version upgrade"]
 draft: false
@@ -89,6 +89,10 @@ May 15 21:29:28 knalarmpi2001 systemd[1]: kubelet.service: Failed with result 'e
 
 
 ### 調査
+
+1. 事象発生機器
+
+   Raspberry Pi 2 Model B
 
 1. cgroupsの現在値を確認
 
