@@ -92,7 +92,7 @@ May 15 21:29:28 knalarmpi2001 systemd[1]: kubelet.service: Failed with result 'e
 
 1. 事象発生機器
 
-   Raspberry Pi 2 Model B
+   Raspberry Pi 2 Model B Rev 1.1
 
 1. cgroupsの現在値を確認
 
