@@ -277,4 +277,5 @@ c470f85ef4a8e       2 hours ago         Ready               kube-proxy-2dklw    
 sudo crictl rmp 3d75c158b98d2 0d295c31a716e 3d75c158b98d2
 ```
 
-
+これで出力され続けていたエラーはなくなりました。
+しかし、このNotReadyなPodsがあってもエラーが出力されるわけでは無いのでこの内容はあくまで対処療法的位置付けです。
