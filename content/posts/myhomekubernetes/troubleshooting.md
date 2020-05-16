@@ -245,3 +245,34 @@ CONFIG_CGROUP_NET_CLASSID=y
 SeeAlso
 : - [enabling cgroup memory doesn't take effect](https://www.raspberrypi.org/forums/viewtopic.php?t=203128)
 : - [カーネル/コンパイル/伝統的な方法 - ArchWiki](https://wiki.archlinux.jp/index.php/カーネル/コンパイル/伝統的な方法)
+
+
+## kubelet Failed to stop sandbox
+
+```
+May 16 10:44:53 knalarmpi2001 kubelet[331]: E0516 10:44:53.977855     331 kuberuntime_gc.go:170] Failed to stop sandbox "c0efcf96eafd018ea1586bf3a7eb6d2cbd24b0beb93cb4330eed51b4409a0786" before removing: rpc error: code = Unknown desc = failed to destroy network for sandbox "c0efcf96eafd018ea1586bf3a7eb6d2cbd24b0beb93cb4330eed51b4409a0786": invalid version "": the version is empty
+```
+
+と1分毎に出力されている。
+
+
+### 回避策
+
+次のNotReadyなPodを削除すると出力され続けていたエラーはなくなりました。[^1]
+
+```fish
+sudo crictl pods
+POD ID              CREATED             STATE               NAME                        NAMESPACE           ATTEMPT
+6904ca3ce6607       2 hours ago         Ready               kube-flannel-ds-arm-d765v   kube-system         7
+053a20f498929       2 hours ago         Ready               speaker-8n6vm               metallb-system      2
+c470f85ef4a8e       2 hours ago         Ready               kube-proxy-2dklw            kube-system         2
+3612798fd46c5       15 hours ago        NotReady            kube-flannel-ds-arm-d765v   kube-system         6
+0d295c31a716e       15 hours ago        NotReady            speaker-8n6vm               metallb-system      1
+3d75c158b98d2       15 hours ago        NotReady            kube-proxy-2dklw            kube-system         1
+```
+
+```fish
+sudo crictl rmp 3d75c158b98d2 0d295c31a716e 3d75c158b98d2
+```
+
+[^1]: このNotReadyなPodsがあってもエラーが出力されないことも確認しています。

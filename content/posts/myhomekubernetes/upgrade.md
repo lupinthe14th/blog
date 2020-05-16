@@ -1,12 +1,7 @@
 ---
 title: "おうちKubernetes ~ 手作業によるバージョンアップグレード編 ~"
 date: 2020-04-04T12:22:54+09:00
-tags:
-- Kubernetes
-- Memo
-- arm
-- single board computer
-- version upgrade
+tags: ["Kubernetes", "Memo", "arm", "single board computer", "version upgrade"]
 draft: false
 ---
 
@@ -69,7 +64,7 @@ SeeAlso
 1. Verify that the download works and has the expected version:
 
     `kubeadm`がバージョンアップしていることを確認します。
-    
+
     ```bash
     kubeadm version
     ```
@@ -111,13 +106,13 @@ SeeAlso
     I0426 02:10:41.136664   13515 version.go:251] remote version is much newer: v1.18.2; falling back to: stable-1.16
     [upgrade/versions] Latest stable version: v1.16.9
     [upgrade/versions] Latest version in the v1.15 series: v1.15.11
-     
+
     Components that must be upgraded manually after you have upgraded the control plane with 'kubeadm upgrade apply':
     COMPONENT   CURRENT       AVAILABLE
     Kubelet     3 x v1.15.3   v1.15.11
-    
+
     Upgrade to the latest version in the v1.15 series:
-    
+
     COMPONENT            CURRENT   AVAILABLE
     API Server           v1.15.3   v1.15.11
     Controller Manager   v1.15.3   v1.15.11
@@ -125,19 +120,19 @@ SeeAlso
     Kube Proxy           v1.15.3   v1.15.11
     CoreDNS              1.3.1     1.6.2
     Etcd                 3.3.10    3.3.10
-    
+
     You can now apply the upgrade by executing the following command:
-    
+
             kubeadm upgrade apply v1.15.11
-    
+
     _____________________________________________________________________
-    
+
     Components that must be upgraded manually after you have upgraded the control plane with 'kubeadm upgrade apply':
     COMPONENT   CURRENT       AVAILABLE
     Kubelet     3 x v1.15.3   v1.16.9
-    
+
     Upgrade to the latest stable version:
-    
+
     COMPONENT            CURRENT   AVAILABLE
     API Server           v1.15.3   v1.16.9
     Controller Manager   v1.15.3   v1.16.9
@@ -145,13 +140,13 @@ SeeAlso
     Kube Proxy           v1.15.3   v1.16.9
     CoreDNS              1.3.1     1.6.2
     Etcd                 3.3.10    3.3.15-0
-    
+
     You can now apply the upgrade by executing the following command:
-    
+
             kubeadm upgrade apply v1.16.9
-    
+
     _____________________________________________________________________
-    ``` 
+    ```
 
 
 1. Choose a version to upgrade to, and run the appropriate command.
@@ -162,7 +157,7 @@ SeeAlso
     ```bash
     kubeadm upgrade apply v1.15.11
     ```
-   
+
     ```bash
     [upgrade/config] Making sure the configuration is correct:
     [upgrade/config] Reading configuration from the cluster...
@@ -173,9 +168,9 @@ SeeAlso
     [upgrade/versions] Cluster version: v1.15.3
     [upgrade/versions] kubeadm version: v1.16.9
     [upgrade/version] FATAL: the --version argument is invalid due to these errors:
-    
+
             - Kubeadm version v1.16.9 can only be used to upgrade to Kubernetes version 1.16
-    
+
     Can be bypassed if you pass the --force flag
     To see the stack trace of this error execute with --v=5 or higher
     ```
@@ -221,7 +216,7 @@ SeeAlso
     ```
 
     うーん、失敗です。なんでだろう。[^3]
-    
+
     [^3]: Rasberyy Pi 3Bのリソースが貧弱なため、Podのデプロイが遅くてタイムアウトしていたようです。気にせずリトライすると成功します。
 
     ひとまず`kubeadm` のバージョンを1.15.11にして段階的にアップデートしてみます。
@@ -266,13 +261,13 @@ SeeAlso
     I0426 02:48:09.548913    8438 version.go:248] remote version is much newer: v1.18.2; falling back to: stable-1.15
     [upgrade/versions] Latest stable version: v1.15.11
     [upgrade/versions] Latest version in the v1.15 series: v1.15.11
-    
+
     Components that must be upgraded manually after you have upgraded the control plane with 'kubeadm upgrade apply':
     COMPONENT   CURRENT       AVAILABLE
     Kubelet     3 x v1.15.3   v1.15.11
-    
+
     Upgrade to the latest version in the v1.15 series:
-    
+
     COMPONENT            CURRENT   AVAILABLE
     API Server           v1.15.3   v1.15.11
     Controller Manager   v1.15.3   v1.15.11
@@ -280,11 +275,11 @@ SeeAlso
     Kube Proxy           v1.15.3   v1.15.11
     CoreDNS              1.3.1     1.3.1
     Etcd                 3.3.10    3.3.10
-    
+
     You can now apply the upgrade by executing the following command:
-    
+
             kubeadm upgrade apply v1.15.11
-    
+
     _____________________________________________________________________
     ```
     </details>
@@ -369,16 +364,15 @@ SeeAlso
     [bootstrap-token] configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
     [addons] Applied essential addon: CoreDNS
     [addons] Applied essential addon: kube-proxy
-    
+
     [upgrade/successful] SUCCESS! Your cluster was upgraded to "v1.15.11". Enjoy!
-    
+
     [upgrade/kubelet] Now that your control plane is upgraded, please proceed with upgrading your kubelets if you haven't already done so.
     ```
-   
+
    </details>
 
     成功しました。
-
 
 1. Manually upgrade your CNI provider plugin.
 
@@ -392,7 +386,7 @@ SeeAlso
     mv bin/* /opt/cni/bin/
     ```
 
-    > One common issue you may encounter if you are using Flannel network is that after the upgrade, the cluster nodes remain in NotReady state. 
+    > One common issue you may encounter if you are using Flannel network is that after the upgrade, the cluster nodes remain in NotReady state.
 
     って事なので、`"cniVersion": "0.8.5",` 行を追加します。
 
@@ -458,13 +452,13 @@ SeeAlso
     I0426 03:31:00.816440    9647 version.go:251] remote version is much newer: v1.18.2; falling back to: stable-1.16
     [upgrade/versions] Latest stable version: v1.16.9
     [upgrade/versions] Latest version in the v1.15 series: v1.15.11
-    
+
     Components that must be upgraded manually after you have upgraded the control plane with 'kubeadm upgrade apply':
     COMPONENT   CURRENT       AVAILABLE
     Kubelet     3 x v1.15.3   v1.16.9
-    
+
     Upgrade to the latest stable version:
-    
+
     COMPONENT            CURRENT    AVAILABLE
     API Server           v1.15.11   v1.16.9
     Controller Manager   v1.15.11   v1.16.9
@@ -472,13 +466,13 @@ SeeAlso
     Kube Proxy           v1.15.11   v1.16.9
     CoreDNS              1.3.1      1.6.2
     Etcd                 3.3.10     3.3.15-0
-    
+
     You can now apply the upgrade by executing the following command:
-    
+
             kubeadm upgrade apply v1.16.9
-    
+
     _____________________________________________________________________
-    
+
     ```
 
     ```bash
@@ -591,9 +585,9 @@ SeeAlso
     [bootstrap-token] configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
     [addons] Applied essential addon: CoreDNS
     [addons] Applied essential addon: kube-proxy
-    
+
     [upgrade/successful] SUCCESS! Your cluster was upgraded to "v1.16.9". Enjoy!
-    
+
     [upgrade/kubelet] Now that your control plane is upgraded, please proceed with upgrading your kubelets if you haven't already done so.
     ```
     </displays>
@@ -624,7 +618,7 @@ SeeAlso
     ```bash
     systemctl restart kubelet
     ```
- 
+
 ## Upgrade worker nodes
 
 ### Upgrade kubeadm
@@ -639,7 +633,7 @@ SeeAlso
     tar xvfz kubernetes-$ROLE-linux-$ARCH.tar.gz
     install -p -m 755 -t /usr/bin/ kubernetes/$ROLE/bin/kubeadm
     ```
- 
+
     ```bash
     kubeadm version
     ```
@@ -714,7 +708,7 @@ SeeAlso
     kubectl uncordon knalarmpi3001
     ```
 
-   
+
 ### Verify the status of the cluster
 
 ```bash
@@ -724,6 +718,24 @@ kubectl get nodes
 でステータスがReadyを確認します。
 
 問題なければ、1.16.x -> 1.17.x, 1.17.x -> 1.18.xと段階的にアップグレードします。
+
+## Upgrade crictl
+
+これも[Current Status](https://github.com/kubernetes-sigs/cri-tools#current-status)のVersion matrixを参考にVERSIONを適宜修正してインストールします。
+
+```bash
+ARCH="arm64"
+VERSION="v1.18.0"
+curl -LO https://github.com/kubernetes-sigs/cri-tools/releases/download/$VERSION/crictl-$VERSION-linux-$ARCH.tar.gz
+sudo tar zxvf crictl-$VERSION-linux-$ARCH.tar.gz -C /usr/local/bin
+rm -f crictl-$VERSION-linux-$ARCH.tar.gz
+
+cat > /etc/crictl.yaml <<EOF
+runtime-endpoint: unix:///run/containerd/containerd.sock
+image-endpoint: unix:///run/containerd/containerd.sock
+timeout: 10
+EOF
+```
 
 ## Summary
 
