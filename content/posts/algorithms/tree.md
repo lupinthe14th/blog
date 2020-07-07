@@ -2,6 +2,7 @@
 title: "木"
 date: 2020-07-01T09:08:05+09:00
 tags: ["memo", "trie", "trie node", "prefix tree", "graph", "algorithm"]
+math: true
 draft: false
 ---
 
