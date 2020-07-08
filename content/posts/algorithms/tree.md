@@ -121,7 +121,49 @@ https://play.golang.org/p/g8PRyXhAsWg
 
 ### Post-Order
 
-TBD
+まず初めに左の枝を訪れることです。次に右の枝、最後に現在のノードを訪れます。
+
+
+次に再帰的アプローチを例示します。
+
+```golang
+// TreeNode is binary tree node definition
+type TreeNode struct {
+        Val   int
+        Left  *TreeNode
+        Right *TreeNode
+}
+type TreeNode struct {
+        Val   int
+        Left  *TreeNode
+        Right *TreeNode
+}
+
+func postorderTraversal(root *TreeNode) []int {
+        out := make([]int, 0)
+
+        var helper func(node *TreeNode)
+        helper = func(node *TreeNode) {
+                if node == nil {
+                        return
+                }
+
+                if node.Left != nil {
+                        helper(node.Left)
+                }
+                if node.Right != nil {
+                        helper(node.Right)
+                }
+                out = append(out, node.Val)
+        }
+
+        helper(root)
+        return out
+}
+```
+
+https://play.golang.org/p/eD6RzBKNvd1
+
 
 ## トライ木（trie tree）
 
