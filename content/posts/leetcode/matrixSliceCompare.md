@@ -17,7 +17,7 @@ leetcodeの問題 [Group Anagrams](https://leetcode.com/problems/group-anagrams/
 ## [reflect.DeepEqual](https://golang.org/pkg/reflect/#DeepEqual) でダメなの？
 
 出力される順番が常に一定ならば、 [reflect.DeepEqual](https://golang.org/pkg/reflect/#DeepEqual) で比較すれば十分です。
-しかし順番が関係ない場合、例えば次のようなgotのパターンでもすべて等しいと判定させる必要があります。
+しかし順番が関係ない場合、たとえば次のようなgotのパターンでもすべて等しいと判定させる必要があります。
 
 ```golang
 package main
