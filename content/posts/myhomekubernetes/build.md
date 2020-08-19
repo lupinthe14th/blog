@@ -32,7 +32,7 @@ SeeAlso
 
 #### [Installing runtime](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-runtime)
 
-Dockerのランタイムのコアなcontenadを使います。
+Dockerのランタイムのコアなcontainerdを使います。
 
 ##### Install containerd
 
